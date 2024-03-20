@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Intro = () => {
+  const [userInput, setUserInput] = useState('');
+  const [chatHistory, setChatHistory] = useState([]);
   const navigate = useNavigate();
 
   const handleLoginClick = () => {
@@ -12,11 +14,69 @@ const Intro = () => {
     navigate('/register');
   };
 
+  const handleInputChange = (event) => {
+    setUserInput(event.target.value);
+  };
+
+  const handleQuestionSubmit = async (event) => {
+    event.preventDefault();
+    const question = userInput.trim();
+    if (!question) return;
+
+    setChatHistory(history => [...history, { sender: 'user', text: question }]);
+
+    const postData = {
+        contents: [{ parts: [{ text: question }] }]
+    };
+
+    try {
+        const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyAPZwG1VkW86SzcGA1SOiQ51_Md2Wqmve0', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(postData),
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            const botResponse = data.candidates[0].content.parts[0].text;
+            setChatHistory(history => [...history, { sender: 'bot', text: botResponse }]);
+        } else {
+            console.error('Failed to fetch response from AI API');
+        }
+    } catch (error) {
+        console.error('Error fetching response:', error);
+    }
+
+    setUserInput('');
+  };
+
   return (
     <div>
       <h1>SecureLaw</h1>
       <button onClick={handleLoginClick}>Log In</button>
       <button onClick={handleRegisterClick}>Register</button>
+
+      <div>
+        <h2>Ask anything related to law</h2>
+        <form onSubmit={handleQuestionSubmit}>
+            <input
+                type="text"
+                value={userInput}
+                onChange={handleInputChange}
+                placeholder="Ask a question"
+            />
+            <button type="submit">Ask</button>
+        </form>
+        <div>
+            {chatHistory.map((message, index) => (
+                <div key={index} className={`message ${message.sender}`}>
+                    {message.text}
+                </div>
+            ))}
+        </div>
+      </div>
     </div>
   );
 };

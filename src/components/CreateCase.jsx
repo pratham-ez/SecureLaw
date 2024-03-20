@@ -18,9 +18,11 @@ const CreateCase = () => {
     pLawyersId: '',
     dLawyersId: '',
     plaintiffName: '',
+    plaintiffId: '',
     pAddress: '',
     pPhone: '',
     defendantName: '',
+    defendantId: '',
     dAddress: '',
     dPhone: '',
     pCaseDetails: '',
@@ -168,6 +170,10 @@ const CreateCase = () => {
           Plaintiff Name:
           <input type="text" name="plaintiffName" value={caseData.plaintiffName} onChange={handleChange} />
         </label>
+        <label>
+          Plaintiff Id:
+          <input type="text" name="plaintiffId" value={caseData.plaintiffId} onChange={handleChange} />
+        </label>
         <br />
         <label>
           Plaintiff Address:
@@ -182,6 +188,10 @@ const CreateCase = () => {
         <label>
           Defendant Name:
           <input type="text" name="defendantName" value={caseData.defendantName} onChange={handleChange} />
+        </label>
+        <label>
+          Defendant Id:
+          <input type="text" name="defendantId" value={caseData.defendantId} onChange={handleChange} />
         </label>
         <br />
         <label>

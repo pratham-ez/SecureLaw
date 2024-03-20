@@ -9,6 +9,7 @@ const Fir = () => {
   const navigate = useNavigate();
   const [firData, setFirData] = useState({
     policeId: '',
+    userId: '',
     date: '',
     name: '',
     phone: '',
@@ -87,6 +88,10 @@ const Fir = () => {
         <label>
           Police ID:
           <input type="text" name="policeId" value={firData.policeId} onChange={handleChange} />
+        </label>
+        <label>
+          User ID:
+          <input type="text" name="userId" value={firData.userId} onChange={handleChange} />
         </label>
         <br />
         <label>

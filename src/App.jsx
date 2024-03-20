@@ -12,10 +12,13 @@ import JudgeHome from './components/JudgeHome';
 import Fir from './components/Fir';
 import CreateCase from './components/CreateCase';
 import AuthMiddleware from './components/AuthMiddleware'; 
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <Router>
+      <Header/>
       <Routes>
         <Route path='/' element={<Intro />} />
         <Route path="/login" element={<Login />} />
@@ -51,6 +54,7 @@ function App() {
           </AuthMiddleware>
         } />
       </Routes>
+      <Footer/>
     </Router>
   );
 }
