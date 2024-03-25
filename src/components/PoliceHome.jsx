@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { db } from '../firebase-config';
 import { collection, query, where, getDocs } from 'firebase/firestore';
@@ -47,6 +48,7 @@ const PoliceHome = () => {
           <li key={caseItem.id}>{caseItem.caseId} - {caseItem.status}</li>
         ))}
       </ul>
+      <Link to="/viewfir">View FIR Details</Link>
     </div>
   );
 };

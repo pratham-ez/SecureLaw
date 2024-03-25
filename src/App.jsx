@@ -14,6 +14,8 @@ import CreateCase from './components/CreateCase';
 import AuthMiddleware from './components/AuthMiddleware'; 
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ViewFIR from './components/ViewFIR';
+import ViewCase from './components/ViewCase';
 
 function App() {
   return (
@@ -26,6 +28,16 @@ function App() {
         <Route path="/userhome" element={
           <AuthMiddleware>
             <UserHome />
+          </AuthMiddleware>
+        } />
+        <Route path="/viewfir" element={
+          <AuthMiddleware>
+            <ViewFIR />
+          </AuthMiddleware>
+        } />
+        <Route path="/viewcase" element={
+          <AuthMiddleware>
+            <ViewCase />
           </AuthMiddleware>
         } />
         <Route path="/policehome" element={

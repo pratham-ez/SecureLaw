@@ -31,6 +31,8 @@ const JudgeHome = () => {
         ))}
       </ul>
       <Link to="/createcase">Create New Case</Link>
+      <br />
+      <Link to="/viewcase">View Case Details</Link>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { db } from '../firebase-config';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 
@@ -40,6 +41,8 @@ const LawyerHome = () => {
           </li>
         ))}
       </ul>
+      <br />
+      <Link to="/viewcase">View Case Details</Link>
     </div>
   );
 };
