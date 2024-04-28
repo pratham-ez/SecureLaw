@@ -13,7 +13,10 @@ const UserHome = () => {
       const firsRef = collection(db, 'firs');
       const q = query(firsRef, where('userId', '==', userId));
       const querySnapshot = await getDocs(q);
-      const fetchedFirs = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      const fetchedFirs = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data() // This fetches all the fields
+      }));
       setFirs(fetchedFirs);
     };
 
@@ -42,13 +45,19 @@ const UserHome = () => {
       <h2>FIRs</h2>
       <ul>
         {firs.map(fir => (
-          <li key={fir.id}>{fir.firId} - {fir.status}</li>
+          <li key={fir.id}>
+            FIR ID: {fir.firId} - Status: {fir.status} - Date: {fir.date} - Offense: {fir.offense}
+          </li>
         ))}
       </ul>
       <h2>Court Cases</h2>
       <ul>
         {courtCases.map(caseItem => (
-          <li key={caseItem.id}>{caseItem.caseId} - {caseItem.status}</li>
+          <li key={caseItem.id}>
+            Case ID: {caseItem.caseId} - Status: {caseItem.status} - 
+            Case Number: {caseItem.caseNumber} - Case Type: {caseItem.caseType} - 
+            FIR ID: {caseItem.firId}
+          </li>
         ))}
       </ul>
       <Link to="/viewcase">View Case Details</Link>

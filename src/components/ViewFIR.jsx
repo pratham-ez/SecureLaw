@@ -48,28 +48,31 @@ const ViewFIR = () => {
       </form>
       {firData && (
         <div className="fir-details">
-          <h2>{firData.firId}</h2>
+          <h2>FIR ID: {firData.firId}</h2>
+          <p>Name: {firData.name}</p>
+          <p>Email: {firData.email}</p>
+          <p>Phone: {firData.phone}</p>
           <p>Date: {firData.date}</p>
+          <p>Offense Location: {firData.offencelocation}</p>
+          <p>Offense: {firData.offense}</p>
           <p>Details of Incident: {firData.detailsOfTheIncident}</p>
+          <p>Relevant Information: {firData.relevantInformation}</p>
           <p>Status: {firData.status}</p>
           <div className="document-links">
-            {firData.documentLinks && firData.documentLinks.length > 0 &&
-              firData.documentLinks.map((link, index) => (
-                <a key={index} href={link} target="_blank" rel="noopener noreferrer">
-                  Document {index + 1}
-                </a>
-              ))}
-          </div>
-          {/* Add styling for images with small width and height */}
-          {firData.images && firData.images.length > 0 &&
-            firData.images.map((image, index) => (
-              <img
-                key={index}
-                src={image}
-                alt={`Image ${index + 1}`}
-                style={{ maxWidth: '100px', maxHeight: '100px', margin: '5px' }}
-              />
+            {firData.documentLinks && firData.documentLinks.map((link, index) => (
+              <a key={index} href={link} target="_blank" rel="noopener noreferrer">
+                Document {index + 1}
+              </a>
             ))}
+          </div>
+          {firData.images && firData.images.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt={`Image ${index + 1}`}
+              style={{ maxWidth: '100px', maxHeight: '100px', margin: '5px' }}
+            />
+          ))}
         </div>
       )}
       {!firData && (

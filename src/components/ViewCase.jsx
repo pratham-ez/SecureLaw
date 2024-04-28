@@ -48,29 +48,38 @@ const ViewCase = () => {
       </form>
       {caseData && (
         <div className="case-details">
-          <h2>{caseData.caseId}</h2>
+          <h2>Case ID: {caseData.caseId}</h2>
           <p>Case Number: {caseData.caseNumber}</p>
           <p>Case Type: {caseData.caseType}</p>
           <p>Filing Date: {caseData.filingDate}</p>
-          {/* Add more fields as needed */}
+          <p>Status: {caseData.status}</p>
+          <p>FIR ID: {caseData.firId}</p>
+          <p>Plaintiff Name: {caseData.plaintiffName}</p>
+          <p>Plaintiff Address: {caseData.pAddress}</p>
+          <p>Plaintiff Case Details: {caseData.pCaseDetails}</p>
+          <p>Plaintiff Lawyer ID: {caseData.pLawyersId}</p>
+          <p>Plaintiff Phone: {caseData.pPhone}</p>
+          <p>Defendant Name: {caseData.defendantName}</p>
+          <p>Defendant Address: {caseData.dAddress}</p>
+          <p>Defendant Case Details: {caseData.dCaseDetails}</p>
+          <p>Defendant Lawyer ID: {caseData.dLawyersId}</p>
+          <p>Defendant Phone: {caseData.dPhone}</p>
+          <p>Judge's Hearings and Notes: {caseData.judgeHearings}</p>
           <div className="document-links">
-            {caseData.documents && caseData.documents.length > 0 &&
-              caseData.documents.map((link, index) => (
-                <a key={index} href={link} target="_blank" rel="noopener noreferrer">
-                  Document {index + 1}
-                </a>
-              ))}
-          </div>
-          {/* Add styling for images with small width and height */}
-          {caseData.images && caseData.images.length > 0 &&
-            caseData.images.map((image, index) => (
-              <img
-                key={index}
-                src={image}
-                alt={`Image ${index + 1}`}
-                style={{ maxWidth: '100px', maxHeight: '100px', margin: '5px' }}
-              />
+            {caseData.documents && caseData.documents.map((link, index) => (
+              <a key={index} href={link} target="_blank" rel="noopener noreferrer">
+                Document {index + 1}
+              </a>
             ))}
+          </div>
+          {caseData.images && caseData.images.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt={`Image ${index + 1}`}
+              style={{ maxWidth: '100px', maxHeight: '100px', margin: '5px' }}
+            />
+          ))}
         </div>
       )}
       {!caseData && (
