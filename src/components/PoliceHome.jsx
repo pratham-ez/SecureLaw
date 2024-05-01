@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { db } from '../firebase-config';
 import { collection, query, where, getDocs, doc, updateDoc } from 'firebase/firestore';
+import './PoliceHome.css'
+import { useNavigate } from 'react-router-dom';
 
 const PoliceHome = () => {
   const [userId, setUserId] = useState(localStorage.getItem('userId') || '');
@@ -51,37 +53,50 @@ const PoliceHome = () => {
     fetchFirs(); // Refresh FIR list after updating
   };
 
+  const navigate = useNavigate();
+
   return (
-    <div>
+    <div className='police-home-container'>
       <h1>PoliceHome</h1>
-      {user && <p>User: {user.userName}</p>}
-      <h2>FIRs</h2>
-      <ul>
-        {firs.map(fir => (
-          <li key={fir.id}>
-            FIR ID: {fir.firId} - Status: {fir.status} - Date: {fir.date} - Offense: {fir.offense}
-            <select 
-              defaultValue={fir.status} 
-              onChange={(e) => handleStatusChange(fir.id, e.target.value)}
-            >
-              <option value="Ongoing">Ongoing</option>
-              <option value="Pending">Pending</option>
-              <option value="Closed">Closed</option>
-            </select>
-          </li>
-        ))}
-      </ul>
-      <h2>Court Cases</h2>
-      <ul>
-        {courtCases.map(caseItem => (
-          <li key={caseItem.id}>
-            Case ID: {caseItem.caseId} - Status: {caseItem.status}
-          </li>
-        ))}
-      </ul>
-      <Link to="/viewfir">View FIR Details</Link>
-      <br/>
-      <Link to="/createfir">Create New FIR</Link>
+      <p className="user-text">User: {user && <span className="user-display">{user.userName}</span>}</p>
+
+      
+      <div className="sections-container">
+        <div className="section fir-section">
+          <h2>FIRs</h2>
+          {firs.map(fir => (
+            <div key={fir.id} className="card">
+              <h3>FIR ID: {fir.firId}</h3>
+              <p>Status: {fir.status}</p>
+              <p>Date: {fir.date}</p>
+              <p>Offense: {fir.offense}</p>
+              <select 
+                defaultValue={fir.status} 
+                onChange={(e) => handleStatusChange(fir.id, e.target.value)}
+              >
+                <option value="Ongoing">Ongoing</option>
+                <option value="Pending">Pending</option>
+                <option value="Closed">Closed</option>
+              </select>
+            </div>
+          ))}
+        </div>
+        
+        <div className="section court-cases-section">
+          <h2>Court Cases</h2>
+          {courtCases.map(caseItem => (
+            <div key={caseItem.id} className="card">
+              <h3>Case ID: {caseItem.caseId}</h3>
+              <p>Status: {caseItem.status}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <div className="button-container">
+        <button onClick={() => navigate('/viewfir')}>View FIR Details</button>
+        <button onClick={() => navigate('/createfir')}>Create New FIR</button>
+      </div>
     </div>
   );
 };

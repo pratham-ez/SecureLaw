@@ -1,0 +1,65 @@
+.police-home-container {
+  margin: 20px auto;
+  padding: 20px;
+  /* background-color: rgb(163, 159, 179); */
+  border-radius: 5px;
+  max-width: 900px;
+}
+
+.police-home-container h1,
+.police-home-container h2 {
+  color: #ffffff; /* Set heading text color to white */
+}
+
+.police-home-container .user-text {
+  color: #ffffff; /* Set text color to white */
+}
+
+.police-home-container .user-display {
+  color: #ffffff; /* Set color of displayed user to white */
+}
+
+
+.police-home-container .sections-container {
+  display: flex;
+}
+
+.police-home-container .section {
+  flex-grow: 1;
+  margin-right: 20px; /* Adjust margin as needed */
+}
+
+.police-home-container .fir-section {
+  width: 50%; /* Adjust width as needed */
+}
+
+.police-home-container .court-cases-section {
+  width: 50%; /* Adjust width as needed */
+}
+
+.police-home-container .card {
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.police-home-container .button-container {
+  display: flex;
+  justify-content: center; /* Align buttons to the center */
+}
+
+.police-home-container .button-container button {
+  margin: 0 5px; /* Adjust margin as needed */
+  padding: 10px 20px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.police-home-container .button-container button:hover {
+  background-color: #30253a; /* Darker shade on hover */
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../firebase-config';
 import { collection, query, where, getDocs } from 'firebase/firestore';
+import './ViewFIR.css';
 
 const ViewFIR = () => {
   const [firIdInput, setFirIdInput] = useState('');
@@ -35,7 +36,7 @@ const ViewFIR = () => {
   }, [firIdInput, userId]);
 
   return (
-    <div>
+    <div className='view-fir-container'>
       <h1>View FIR</h1>
       <form onSubmit={(e) => { e.preventDefault(); }}>
         <input

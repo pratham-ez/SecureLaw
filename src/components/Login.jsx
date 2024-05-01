@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { collection, query, where, getDocs } from 'firebase/firestore';
+import './Login.css';
 
 const Login = () => {
   const [userId, setUserId] = useState("");
@@ -76,27 +77,36 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="container_gg">
+      <h2>Enter User ID</h2>
       <TextField
+        className="text-field"
         value={userId}
         onChange={(e) => setUserId(e.target.value)}
         label="Enter User ID"
       />
-      <br />
       <PhoneInput
+        className="phone-input"
         country={'in'}
         value={phone}
         onChange={(phone) => setPhone("+" + phone)}
       />
-      <Button onClick={sendOtp} variant='contained'>Send Otp</Button>
+      <div className="button-container1">
+        <Button className="button" onClick={sendOtp} variant='contained'>Send Otp</Button>
+      </div>
       <div id='recaptcha'></div>
-      <br />
-      <TextField onChange={(e) => setOtp(e.target.value)} label="Enter OTP" />
-      <br />
-      <Button onClick={verifyOtp} variant='contained'>Verify Otp</Button>
-      <ToastContainer />
+      <TextField
+        className="otp-field"
+        onChange={(e) => setOtp(e.target.value)}
+        label="Enter OTP"
+      />
+      <div className="button-container">
+        <Button className="button" onClick={verifyOtp} variant='contained'>Verify Otp</Button>
+        <ToastContainer />
+      </div>
     </div>
   );
+  
 };
 
 export default Login;

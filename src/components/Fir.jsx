@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Snackbar } from '@mui/material';
 import { db } from '../firebase-config';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import './Fir.css';
 
 const Fir = () => {
   const navigate = useNavigate();
@@ -79,66 +80,70 @@ const Fir = () => {
   };
 
   return (
-    <div>
+    <div className='fir-container'>
       <h1>File FIR</h1>
       <form onSubmit={(e) => {
         e.preventDefault();
         sendData();
       }}>
-        <label>
-          Police ID:
-          <input type="text" name="policeId" value={firData.policeId} onChange={handleChange} />
-        </label>
-        <label>
-          User ID:
-          <input type="text" name="userId" value={firData.userId} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Date:
-          <input type="text" name="date" value={firData.date} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Name:
-          <input type="text" name="name" value={firData.name} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Phone:
-          <input type="text" name="phone" value={firData.phone} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Email:
-          <input type="email" name="email" value={firData.email} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Offense Location:
-          <input type="text" name="offencelocation" value={firData.offencelocation} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Offense:
-          <input type="text" name="offense" value={firData.offense} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Details of the Incident:
-          <textarea name="detailsOfTheIncident" value={firData.detailsOfTheIncident} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Relevant Information:
-          <textarea name="relevantInformation" value={firData.relevantInformation} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Attach Documents:
-          <input type="file" multiple onChange={handleFileChange} />
-        </label>
-        <br />
+        <div className="left-section">
+          <label>
+            Police ID:
+            <input type="text" name="policeId" value={firData.policeId} onChange={handleChange} />
+          </label>
+          <label>
+            User ID:
+            <input type="text" name="userId" value={firData.userId} onChange={handleChange} />
+          </label>
+          <br />
+          <label>
+            Date:
+            <input type="text" name="date" value={firData.date} onChange={handleChange} />
+          </label>
+          <br />
+          <label>
+            Name:
+            <input type="text" name="name" value={firData.name} onChange={handleChange} />
+          </label>
+          <br />
+          <label>
+            Phone:
+            <input type="text" name="phone" value={firData.phone} onChange={handleChange} />
+          </label>
+          <br />
+          <label>
+            Email:
+            <input type="email" name="email" value={firData.email} onChange={handleChange} />
+          </label>
+          <br />
+        </div>
+        <div className="right-section">
+          <label>
+            Offense Location:
+            <input type="text" name="offencelocation" value={firData.offencelocation} onChange={handleChange} />
+          </label>
+          <br />
+          <label>
+            Offense:
+            <input type="text" name="offense" value={firData.offense} onChange={handleChange} />
+          </label>
+          <br />
+          <label>
+            Details of the Incident:
+            <textarea name="detailsOfTheIncident" value={firData.detailsOfTheIncident} onChange={handleChange} />
+          </label>
+          <br />
+          <label>
+            Relevant Information:
+            <textarea name="relevantInformation" value={firData.relevantInformation} onChange={handleChange} />
+          </label>
+          <br />
+          <label>
+            Attach Documents:
+            <input type="file" multiple onChange={handleFileChange} />
+          </label>
+          <br />
+        </div>
         <button type="submit">Submit FIR</button>
       </form>
       <Snackbar

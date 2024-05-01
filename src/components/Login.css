@@ -1,0 +1,55 @@
+.container_gg-wrapper {
+  position: relative; /* Set the position to relative */
+  height: 100vh; /* Full viewport height */
+  background-color: #081828;
+}
+
+.container_gg {
+  position: absolute; /* Set the position to absolute */
+  top: 50%; /* Align the top edge of the container to the middle of the viewport */
+  left: 50%; /* Align the left edge of the container to the middle of the viewport */
+  transform: translate(-50%, -50%); /* Center the container */
+  max-width: 600px;
+  padding: 20px;
+  background-color: rgb(163, 159, 179);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+
+.container_gg h2 {
+  margin-bottom: 20px;
+  color: #081828;
+}
+
+.container_gg .text-field,
+.container_gg .phone-input,
+.container_gg .otp-field {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.container_gg .text-field{
+  width: 300px;
+}
+
+.container_gg .otp-field{
+  width: 300px;
+}
+.container_gg .button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container_gg .button {
+  background-color: #000000;
+}
+.container_gg .button-container1 {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .container_gg {
+    width: 90%;
+  }
+}

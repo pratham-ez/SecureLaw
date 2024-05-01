@@ -1,0 +1,112 @@
+.register-container {
+  margin-top: 80px;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+  width: 65%;
+  margin-left: auto; /* Add this line */
+  margin-right: auto; /* Add this line */
+  height: auto;
+  background-color: rgb(163, 159, 179);
+  border: 2px solid #fff; /* Add border */
+  padding: 0px; /* Add padding */
+  border-radius: 10px; /* Add border radius */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Add box shadow */
+}
+
+.register-container h1 {
+  font-size: 35px;
+  color: #2b2b2b;
+}
+
+.container-box {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin-top: 20px;
+}
+
+.left-box,
+.right-box {
+  width: 45%;
+  box-sizing: border-box;
+}
+
+.left-box {
+  width: 45%;
+  margin-right: 20px; /* Add margin-right to create space between the left and right containers */
+  margin-left: -20px;
+  border: 1px solid #000000; /* Border around the left container */
+  border-radius: 5px; /* Optional: Add border radius for rounded corners */
+  padding: 15px; /* Optional: Add padding to the left container */
+}
+
+.right-box {
+  width: 45%;
+  margin-left: 10px; /* Add margin-left to create space between the left and right containers */
+  margin-right: -20px;
+  border: 1px solid #000000; /* Border around the right container */
+  border-radius: 5px; /* Optional: Add border radius for rounded corners */
+  padding: 15px; /* Optional: Add padding to the right container */
+}
+
+.left-box label,
+.right-box label {
+  display: block;
+  margin-bottom: 35px;
+  color: rgb(36, 36, 36);
+  font-size: large;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.left-box input,
+.left-box select,
+.right-box input,
+.right-box select {
+  width: 100%; /* Set the width of input fields and selects to 100% */
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #161616;
+  color: #fff;
+}
+
+
+
+
+
+.left-box input,
+.right-box input,
+.left-box select,
+.right-box select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+.register-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #000000;
+  color: #fff;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.register-button:hover {
+  background-color: #403149;
+}
+
+.snackbar-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}

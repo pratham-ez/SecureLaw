@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Snackbar } from '@mui/material';
 import { db } from '../firebase-config';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import './CreateCase.css';
 
 const CreateCase = () => {
   const navigate = useNavigate();
@@ -116,7 +117,7 @@ const CreateCase = () => {
   };
 
   return (
-    <div>
+    <div className='create-case-container'>
       <h1>Create Case</h1>
       <form onSubmit={(e) => {
         e.preventDefault();

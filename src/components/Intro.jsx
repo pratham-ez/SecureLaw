@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Intro.css';
 
 const Intro = () => {
   const [userInput, setUserInput] = useState('');
@@ -53,32 +54,54 @@ const Intro = () => {
   };
 
   return (
-    <div>
-      <h1>SecureLaw</h1>
-      <button onClick={handleLoginClick}>Log In</button>
-      <button onClick={handleRegisterClick}>Register</button>
-
-      <div>
-        <h2>Ask anything related to law</h2>
-        <form onSubmit={handleQuestionSubmit}>
+    <div className="intro-container"> 
+      <div className="header-container">
+        <h1>Secure. Transparent. Efficient. <br />FIRs Reimagined with Blockchain.</h1>
+      </div>
+      <div className="subheader-container">
+        <p>Say Goodbye to Paperwork: Embrace the Efficiency of Blockchain for FIR Management. Secure Filing, Real-Time Access, and Collaborative Investigations - A New Era of Public Safety Awaits.</p>
+      </div>
+      <div className="new-container">
+        <div className="left-container">
+          <h1>Already an authorized user?</h1>
+          <button onClick={handleLoginClick}>Log In</button>
+        </div>
+        <div className="divider"></div>
+        <div className="right-container">
+          <h2>New User</h2>
+          <button onClick={handleRegisterClick}>Register</button>
+        </div>
+      </div>
+      <div className="ask-container">
+        <div className="ai-info">
+          <img src="/star.png" alt="Introducing AI" className="ai-image" />
+          <p>Introducing AI. Get your doubts cleared related to any law concerning you.</p>
+        </div>
+      </div>
+      <div className="container">
+        <div>
+          <h2>Enter your question here:</h2>
+          <form onSubmit={handleQuestionSubmit}>
             <input
-                type="text"
-                value={userInput}
-                onChange={handleInputChange}
-                placeholder="Ask a question"
+              type="text"
+              value={userInput}
+              onChange={handleInputChange}
+              placeholder="Ask a question"
             />
             <button type="submit">Ask</button>
-        </form>
-        <div>
+          </form>
+          <div>
             {chatHistory.map((message, index) => (
-                <div key={index} className={`message ${message.sender}`}>
-                    {message.text}
-                </div>
+              <div key={index} className={`message ${message.sender}`}>
+                {message.text}
+              </div>
             ))}
+          </div>
         </div>
       </div>
     </div>
   );
+  
 };
 
 export default Intro;

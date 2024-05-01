@@ -1,0 +1,64 @@
+.view-case-container {
+    margin: 20px;
+}
+
+.view-case-container h1 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.view-case-container form {
+    margin-bottom: 20px;
+}
+
+.view-case-container input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    margin-right: 10px;
+}
+
+.view-case-container button {
+    padding: 13px 20px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.view-case-container button:hover {
+    background-color: #0056b3;
+}
+
+.view-case-container .case-details {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.view-case-container .case-details h2 {
+    margin-bottom: 10px;
+}
+
+.view-case-container .case-details p {
+    margin-bottom: 5px;
+}
+
+.view-case-container .document-links a {
+    display: block;
+    margin-bottom: 5px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.view-case-container .document-links a:hover {
+    text-decoration: underline;
+}
+
+.view-case-container .document-links img {
+    max-width: 100px;
+    max-height: 100px;
+    margin: 5px;
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../firebase-config';
 import { collection, query, where, getDocs } from 'firebase/firestore';
+import './ViewCase.css';
 
 const ViewCase = () => {
   const [caseIdInput, setCaseIdInput] = useState('');
@@ -35,7 +36,7 @@ const ViewCase = () => {
   }, [caseIdInput, userId]);
 
   return (
-    <div>
+    <div className='view-case-container'>
       <h1>View Case</h1>
       <form onSubmit={(e) => { e.preventDefault(); }}>
         <input

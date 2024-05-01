@@ -1,0 +1,59 @@
+.judge-home-container {
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 900px;
+  }
+  
+  .judge-home-container h1,
+  .judge-home-container h2 {
+    color: #ffffff;
+  }
+  
+  .judge-home-container .cases-container {
+    display: grid;
+    gap: 20px;
+  }
+  
+  .judge-home-container .case-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .judge-home-container .case-card h3 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .judge-home-container select {
+    margin-top: 10px;
+  }
+  
+  .judge-home-container .button {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .judge-home-container .button:hover {
+    background-color: #30253a;
+  }
+
+  .judge-home-container .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .judge-home-container .button-container button {
+    margin: 0 10px;
+  }
+  
+  

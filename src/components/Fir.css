@@ -1,0 +1,60 @@
+.fir-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+
+.fir-container h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.fir-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.fir-container label {
+    margin-bottom: 10px;
+}
+
+.fir-container .left-section label,
+.fir-container .right-section label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.fir-container .left-section input,
+.fir-container .right-section input,
+.fir-container .left-section textarea,
+.fir-container .right-section textarea,
+.fir-container .left-section select,
+.fir-container .right-section select {
+    width: 550px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.fir-container button {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.fir-container button:hover {
+    background-color: #0056b3;
+}
+
+.snackbar {
+    color: #fff;
+}

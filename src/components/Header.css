@@ -1,6 +1,6 @@
 /* Header.css */
 .header-nav {
-    background-color: #333;
+    background-color: black;
     overflow: hidden;
     display: flex;
     justify-content: start;
@@ -27,6 +27,7 @@
     border: none;
     cursor: pointer;
     background: none;
+    font-size: 16px;
 }
 
 .header-nav .logo {

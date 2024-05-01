@@ -1,0 +1,44 @@
+.lawyer-home-container {
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 900px;
+  }
+  
+  .lawyer-home-container h1,
+  .lawyer-home-container h2 {
+    color: #ffffff;
+  }
+  
+  .lawyer-home-container .cases-container {
+    display: grid;
+    gap: 20px;
+  }
+  
+  .lawyer-home-container .case-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .lawyer-home-container .case-card h3 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .lawyer-home-container .button {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .lawyer-home-container .button:hover {
+    background-color: #30253a;
+  }
+  

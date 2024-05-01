@@ -1,0 +1,196 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #081828;
+}
+
+.header-container {
+  background-color: #081828;
+  color: #fff;
+  padding: 20px;
+  text-align: left;
+}
+
+.intro-container .header-container h1 {
+  margin:0;
+  font-size: 75px;
+}
+
+.intro-container .subheader-container {
+  background-color: #081828;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  /* font-family: Georgia, 'Times New Roman', Times, serif; */
+  margin-top: 40px;
+  margin-left: 300px;
+  margin-right: 300px;
+  font-size: 25px;
+}
+
+.intro-container .subheader-container p {
+  margin: 0;
+}
+
+.intro-container .new-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  text-align: center;
+  margin-left: 300px;
+  margin-right: 300px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.intro-container .new-container button:hover {
+  background-color: #3e1851; 
+}
+
+.intro-container .left-container h1,
+.intro-container .right-container h2{
+  font-size: 30px;
+  color: #111010;
+}
+.intro-container .left-container,
+.intro-container .right-container {
+  flex: 1;
+  padding: 20px;
+  background-color: #a8b8c7;
+  border-radius: 20px;
+  color: #111010;
+  
+}
+
+.intro-container .left-container h1,
+.intro-container .right-container h2 {
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.left-container button,
+.right-container button {
+  background-color: rgb(9, 1, 9);
+}
+
+.intro-container .divider {
+  width: 2px;
+  height: 100px;
+  background-color: #fff;
+  margin: 0 20px;
+}
+
+.intro-container .ai-info {
+  display: flex;
+  align-items: center;
+}
+
+.intro-container .ai-image {
+  margin-left: 70px;
+  width: 60px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 1px; /* Add some spacing between the image and text */
+}
+
+.intro-container .ask-container {
+  font-size: 50px;
+  margin-top: 45px;
+  padding: 0px;
+  background-color: #081828;
+  color: #fff;
+  text-align:left;
+}
+
+.intro-container .ask-container p{
+  margin-top: 115px;
+}
+
+
+
+
+.intro-container .container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #081828;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 100px;
+}
+
+.intro-container h2{
+  color: white;
+  font-size: 30px;
+}
+
+/* h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+} */
+
+.intro-container button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #000000;
+  color: #fff;
+  font-size: 16px;
+}
+
+.intro-container button:hover {
+  background-color: #392946;
+}
+
+.intro-container input[type="text"] {
+  width: calc(100% - 21px);
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 25px;
+}
+
+.intro-container input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.intro-container button[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #0b3e25;
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.intro-container button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.intro-container .message {
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.intro-container .user {
+  background-color: #f0f0f0;
+}
+
+.intro-container .bot {
+  background-color: #d4edda;
+}
+
+.intro-container .message.user {
+  text-align: left;
+}
+
+.intro-container .message.bot {
+  text-align: left;
+}

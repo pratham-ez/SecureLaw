@@ -2,11 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { db } from '../firebase-config';
 import { collection, query, where, getDocs } from 'firebase/firestore';
+import './UserHome.css'
+import { useNavigate } from 'react-router-dom';
 
 const UserHome = () => {
   const userId = localStorage.getItem('userId') || '';
   const [firs, setFirs] = useState([]);
   const [courtCases, setCourtCases] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchFirs = async () => {
@@ -40,30 +44,43 @@ const UserHome = () => {
   }, [userId]);
 
   return (
-    <div>
-      <h1>UserHome</h1>
-      <h2>FIRs</h2>
-      <ul>
-        {firs.map(fir => (
-          <li key={fir.id}>
-            FIR ID: {fir.firId} - Status: {fir.status} - Date: {fir.date} - Offense: {fir.offense}
-          </li>
-        ))}
-      </ul>
-      <h2>Court Cases</h2>
-      <ul>
-        {courtCases.map(caseItem => (
-          <li key={caseItem.id}>
-            Case ID: {caseItem.caseId} - Status: {caseItem.status} - 
-            Case Number: {caseItem.caseNumber} - Case Type: {caseItem.caseType} - 
-            FIR ID: {caseItem.firId}
-          </li>
-        ))}
-      </ul>
-      <Link to="/viewcase">View Case Details</Link>
-      <br />
-      <Link to="/viewfir">View FIR Details</Link>
+    <div className="user-home-container">
+    <h1>UserHome</h1>
+    <div className="sections-container">
+      <div className="section fir-section">
+        <h2>FIRs</h2>
+        <div className="fir-cards">
+          {firs.map(fir => (
+            <div key={fir.id} className="card">
+              <p className='high1'>FIR ID: {fir.firId}</p>
+              <p>Status: {fir.status}</p>
+              <p>Date: {fir.date}</p>
+              <p>Offense: {fir.offense}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="section court-cases-section">
+        <h2>Court Cases</h2>
+        <div className="court-cases-cards">
+          {courtCases.map(caseItem => (
+            <div key={caseItem.id} className="card">
+              <p className='high2'>Case ID: {caseItem.caseId}</p>
+              <p>Status: {caseItem.status}</p>
+              <p>Case Number: {caseItem.caseNumber}</p>
+              <p>Case Type: {caseItem.caseType}</p>
+              <p>FIR ID: {caseItem.firId}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
+    <div className="button-container">
+      <button onClick={() => navigate('/viewcase')}>View Case Details</button>
+      <button onClick={() => navigate('/viewfir')}>View FIR Details</button>
+    </div>
+  </div>
+      
   );
 };
 

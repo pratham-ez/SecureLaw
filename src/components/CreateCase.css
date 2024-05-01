@@ -1,0 +1,52 @@
+.create-case-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+
+.create-case-container h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.create-case-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.create-case-container label {
+    margin-bottom: 10px;
+}
+
+.create-case-container input,
+.create-case-container textarea,
+.create-case-container button,
+.create-case-container select {
+    width: 565px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.create-case-container button {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.create-case-container button:hover {
+    background-color: #0056b3;
+}
+
+.snackbar {
+    color: #fff;
+}

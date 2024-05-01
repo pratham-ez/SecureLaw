@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { db } from '../firebase-config';
 import { collection, query, where, getDocs } from 'firebase/firestore';
+import './LawyerHome.css'
 
 const LawyerHome = () => {
   const [cases, setCases] = useState([]);
@@ -31,18 +32,21 @@ const LawyerHome = () => {
   }, [userId]);
 
   return (
-    <div>
+    <div className="lawyer-home-container">
       <h1>LawyerHome</h1>
       <h2>Your Cases</h2>
-      <ul>
+      <div className="cases-container">
         {cases.map(caseItem => (
-          <li key={caseItem.id}>
-            {caseItem.caseId} - {caseItem.status}
-          </li>
+          <div key={caseItem.id} className="case-card">
+            <h3>{caseItem.caseId}</h3>
+            <p>Status: {caseItem.status}</p>
+            <p>Defendant ID: {caseItem.defendantId}</p>
+            <p>Plaintiff ID: {caseItem.plaintiffId}</p>
+            {/* <p>Case Details: {caseItem.caseDetails}</p> */}
+          </div>
         ))}
-      </ul>
-      <br />
-      <Link to="/viewcase">View Case Details</Link>
+      </div>
+      <Link to="/viewcase" className="button">View Case Details</Link>
     </div>
   );
 };

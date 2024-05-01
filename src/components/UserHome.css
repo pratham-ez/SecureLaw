@@ -1,0 +1,81 @@
+.user-home-container {
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 900px;
+  }
+  
+  .user-home-container h1,
+  .user-home-container h2 {
+    color: #ffffff;
+  }
+  
+  .user-home-container .user-text {
+    color: #ffffff;
+  }
+  
+  .user-home-container .user-display {
+    color: #ffffff;
+  }
+  
+  .user-home-container .sections-container {
+    display: flex;
+  }
+  
+  .user-home-container .section {
+    flex-grow: 1;
+    margin-right: 20px;
+  }
+  
+  .user-home-container .fir-section {
+    width: 50%;
+  }
+  
+  .user-home-container .court-cases-section {
+    width: 50%;
+  }
+  
+  .user-home-container .fir-cards {
+    display: grid;
+    gap: 20px;
+  }
+  
+  .user-home-container .court-cases-cards {
+    display: grid;
+    gap: 20px;
+  }
+  
+  .user-home-container .card {
+    background-color: #fff;
+    padding: 0px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .user-home-container .high1,
+  .user-home-container .high2{
+    font-weight: bold;
+    font-size: 25px;
+  }
+
+  
+  .user-home-container .button-container {
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .user-home-container .button-container button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .user-home-container .button-container button:hover {
+    background-color: #30253a;
+  }
+  

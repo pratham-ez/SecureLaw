@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { db } from '../firebase-config';
 import { collection, query, where, getDocs, doc, updateDoc } from 'firebase/firestore';
+import './JudgeHome.css'
+import { useNavigate } from 'react-router-dom';
 
 const JudgeHome = () => {
   const [courtCases, setCourtCases] = useState([]);
@@ -32,18 +34,20 @@ const JudgeHome = () => {
     fetchCourtCases(); // Refresh case list after updating
   };
 
+  const navigate = useNavigate();
+
   return (
-    <div>
+    <div className="judge-home-container">
       <h1>JudgeHome</h1>
       <h2>Court Cases</h2>
-      <ul>
+      <div className="cases-container">
         {courtCases.map(caseItem => (
-          <li key={caseItem.id}>
-            Case ID: {caseItem.caseId} - 
-            Status: {caseItem.status} - 
-            Case Number: {caseItem.caseNumber} - 
-            Case Type: {caseItem.caseType} - 
-            FIR ID: {caseItem.firId}
+          <div key={caseItem.id} className="case-card">
+            <h3>Case ID: {caseItem.caseId}</h3>
+            <p>Status: {caseItem.status}</p>
+            <p>Case Number: {caseItem.caseNumber}</p>
+            <p>Case Type: {caseItem.caseType}</p>
+            <p>FIR ID: {caseItem.firId}</p>
             <select 
               defaultValue={caseItem.status} 
               onChange={(e) => handleStatusChange(caseItem.id, e.target.value)}
@@ -52,12 +56,13 @@ const JudgeHome = () => {
               <option value="Pending">Pending</option>
               <option value="Closed">Closed</option>
             </select>
-          </li>
+          </div>
         ))}
-      </ul>
-      <Link to="/createcase">Create New Case</Link>
-      <br />
-      <Link to="/viewcase">View Case Details</Link>
+      </div>
+      <div className="button-container">
+        <button className="button" onClick={() => navigate('/createcase')}>Create New Case</button>
+        <button className="button" onClick={() => navigate('/viewcase')}>View Case Details</button>
+        </div>
     </div>
   );
 };

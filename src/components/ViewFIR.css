@@ -1,0 +1,65 @@
+.view-fir-container {
+    margin: 20px;
+  }
+  
+  .view-fir-container h1 {
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .view-fir-container form {
+    margin-bottom: 20px;
+  }
+  
+  .view-fir-container input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    margin-right: 10px;
+  }
+  
+  .view-fir-container button {
+    padding: 13px 20px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .view-fir-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .view-fir-container .fir-details {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .view-fir-container .fir-details h2 {
+    margin-bottom: 10px;
+  }
+  
+  .view-fir-container .fir-details p {
+    margin-bottom: 5px;
+  }
+  
+  .view-fir-container .document-links a {
+    display: block;
+    margin-bottom: 5px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .view-fir-container .document-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .view-fir-container .document-links img {
+    max-width: 100px;
+    max-height: 100px;
+    margin: 5px;
+  }
+  
