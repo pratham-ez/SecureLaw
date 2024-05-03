@@ -75,10 +75,14 @@ const CreateCase = () => {
   };
 
   const validateData = async () => {
-    const { firId, judgeId, pLawyersId, dLawyersId } = caseData;
+    const { policeId, firId, judgeId, pLawyersId, dLawyersId } = caseData;
 
     if (firId && !(await checkFirIdExists(firId))) {
       throw new Error('FIR ID does not exist');
+    }
+    
+    if (policeId && !(await checkFirIdExists(policeId))) {
+      throw new Error('Police ID does not exist');
     }
 
     if (judgeId && !(await checkUserIdExists(judgeId))) {
